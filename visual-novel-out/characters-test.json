@@ -1,0 +1,75 @@
+{
+  "mendelssohn": {
+    "id": "mendelssohn",
+    "name": "멘델스존",
+    "color": "#8FCBFA",
+    "initialAffection": 0,
+    "minAffection": -100,
+    "maxAffection": 100,
+    "imageFolder": "mendelssohn",
+    "emotions": {
+      "default": "m_default.png",
+      "beam": "m_beam.png",
+      "blush": "m_blush.png",
+      "complain": "m_complain.png",
+      "discontent": "m_discontent.png",
+      "frown": "m_frown.png",
+      "gentle": "m_gentle.png",
+      "laugh": "m_laugh.png",
+      "reprimaid": "m_reprimaid.png",
+      "shy": "m_shy.png"
+    },
+    "nonPlayable": false
+  },
+  "liszt": {
+    "id": "liszt",
+    "name": "리스트",
+    "color": "#FAEA8F",
+    "initialAffection": 0,
+    "minAffection": -100,
+    "maxAffection": 100,
+    "imageFolder": "liszt",
+    "emotions": {
+      "default": "l_default.png",
+      "awkward": "l_awkward.png",
+      "bitter": "l_bitter.png",
+      "blush": "l_blush.png",
+      "enthusiastic": "l_enthusiastic.png",
+      "gentle": "l_gentle.png",
+      "laugh": "l_laugh.png",
+      "smile": "l_smile.png"
+    },
+    "nonPlayable": false
+  },
+  "szymanowska": {
+    "id": "szymanowska",
+    "name": "시마노프스카",
+    "color": "#ffbce9",
+    "initialAffection": 0,
+    "minAffection": 0,
+    "maxAffection": 0,
+    "imageFolder": "szymanowska",
+    "emotions": {
+      "default": "s_default.png",
+      "balldefault": "s_ball_default.png",
+      "ballsmile": "s_ball_smile.png",
+      "ballsmilingeyes": "s_ball_smilingeyes.png",
+      "ballsigh": "s_ball_sigh.png",
+      "ballsurprise": "s_ball_surprise.png"
+    },
+    "nonPlayable": false
+  },
+  "extracharacter": {
+    "id": "extracharacter",
+    "name": "그냥아무이름이나씀",
+    "color": "#FFFFFFF",
+    "initialAffection": 0,
+    "minAffection": 0,
+    "maxAffection": 0,
+    "imageFolder": "extracharacter",
+    "emotions": {
+      "default": ""
+    },
+    "nonPlayable": true
+  }
+}
