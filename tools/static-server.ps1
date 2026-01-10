@@ -1,7 +1,7 @@
 param(
-    [int]$Port = 8000,
-    [string]$RootPath = (Join-Path (Split-Path -Parent $PSScriptRoot) 'visual-novel-out'),
-    [switch]$SpaFallback
+  [int]$Port = 8000,
+  [string]$RootPath,
+  [switch]$SpaFallback
 )
 
 function Get-MimeType {
@@ -13,6 +13,10 @@ function Get-MimeType {
     ".css"  { "text/css" }
     ".js"   { "application/javascript" }
     ".json" { "application/json" }
+    ".mp3"  { "audio/mpeg" }
+    ".ogg"  { "audio/ogg" }
+    ".wav"  { "audio/wav" }
+    ".m4a"  { "audio/mp4" }
     ".png"  { "image/png" }
     ".jpg"  { "image/jpeg" }
     ".jpeg" { "image/jpeg" }
@@ -34,6 +38,24 @@ function Resolve-FilePath {
   if (Test-Path $path -PathType Container) { $path = Join-Path $path 'index.html' }
   if (-not (Test-Path $path -PathType Leaf) -and $Spa.IsPresent) { $path = Join-Path $Root 'index.html' }
   return $path
+}
+
+if (-not $RootPath -or -not (Test-Path $RootPath -PathType Container)) {
+  $repoRoot = (Split-Path -Parent $PSScriptRoot)
+  $candidates = @(
+    (Join-Path $repoRoot 'visual-novel\out'),
+    (Join-Path $repoRoot 'visual-novel-out'),
+    (Join-Path $repoRoot 'out'),
+    (Join-Path $repoRoot 'visual-novel')
+  )
+  foreach ($c in $candidates) {
+    if (Test-Path $c -PathType Container) { $RootPath = $c; break }
+  }
+}
+
+if (-not $RootPath -or -not (Test-Path $RootPath -PathType Container)) {
+  Write-Error "RootPath가 존재하지 않습니다. -RootPath 로 빌드 출력 폴더(out)를 지정하세요."
+  exit 1
 }
 
 Write-Host "RootPath: $RootPath"
