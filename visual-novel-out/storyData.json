@@ -1,0 +1,298 @@
+{
+  "gameInfo": {
+    "title": "제목",
+    "subtitle": "부제",
+    "me": "",
+    "backgroundMusic": ""
+  },
+  "characters": {
+    "aa": {
+      "id": "aa",
+      "name": "에이",
+      "color": "#ffffff",
+      "initialAffection": 0,
+      "minAffection": 0,
+      "maxAffection": 10,
+      "imageFolder": "aa",
+      "emotions": {
+        "default": "aa_01_default.png"
+      }
+    },
+    "bb": {
+      "id": "bb",
+      "name": "비",
+      "color": "#ffffff",
+      "initialAffection": 0,
+      "minAffection": 0,
+      "maxAffection": 10,
+      "imageFolder": "bb",
+      "emotions": {
+        "default": "bb_01_default.png"
+      }
+    }
+  },
+  "places": {
+    "forest": {
+      "id": "forest",
+      "name": "숲속",
+      "image": "forest.png",
+      "color": ""
+    }
+  },
+  "storyScenes": [
+    {
+      "id": "scene1",
+      "type": "normal",
+      "place": "forest",
+      "dialogues": [
+        {
+          "speaker": "aa",
+          "text": "안녕하세요.",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left",
+              "active": true
+            }
+          ]
+        },
+        {
+          "speaker": "bb",
+          "text": "안뇽.",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left"
+            },
+            {
+              "id": "bb",
+              "emotion": "default",
+              "position": "center",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "next": "scene1_choice"
+    },
+    {
+      "id": "scene1_choice",
+      "type": "choice",
+      "place": "forest",
+      "dialogues": [
+        {
+          "speaker": "aa",
+          "text": "이름이 뭐예요?",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left",
+              "active": true
+            },
+            {
+              "id": "bb",
+              "emotion": "default",
+              "position": "center"
+            }
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "text": "선택지1",
+          "next": null,
+          "index": 1,
+          "affectionChanges": {
+            "aa": 2
+          },
+          "reaction": {
+            "speaker": "aa",
+            "text": "예쁜 이름이네요.",
+            "characters": [
+              {
+                "id": "aa",
+                "emotion": "default",
+                "position": "left",
+                "active": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "선택지2",
+          "next": null,
+          "index": 2,
+          "affectionChanges": {
+            "bb": 2
+          },
+          "reaction": {
+            "speaker": "aa",
+            "text": "예쁜 이름이네요.",
+            "characters": [
+              {
+                "id": "aa",
+                "emotion": "default",
+                "position": "left",
+                "active": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "선택지3",
+          "next": null,
+          "index": 3,
+          "affectionChanges": {
+            "aa": 1
+          },
+          "reaction": {
+            "speaker": "aa",
+            "text": "예쁜 이름이네요.",
+            "characters": [
+              {
+                "id": "aa",
+                "emotion": "default",
+                "position": "left",
+                "active": true
+              }
+            ]
+          }
+        }
+      ],
+      "next": "scene2"
+    },
+    {
+      "id": "scene2",
+      "type": "normal",
+      "place": "forest",
+      "checkAffection": true,
+      "dialogues": [
+        {
+          "speaker": "bb",
+          "text": "안녕히 가세요.",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left"
+            },
+            {
+              "id": "bb",
+              "emotion": "default",
+              "position": "center",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "next": "normal_ending"
+    },
+    {
+      "id": "normal_ending",
+      "type": "ending",
+      "place": "forest",
+      "dialogues": [
+        {
+          "speaker": "aa",
+          "text": "기본 엔딩",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left",
+              "active": true
+            },
+            {
+              "id": "bb",
+              "emotion": "default",
+              "position": "center"
+            }
+          ]
+        }
+      ],
+      "next": "good_ending_aa"
+    },
+    {
+      "id": "good_ending_aa",
+      "type": "ending",
+      "place": "forest",
+      "dialogues": [
+        {
+          "speaker": "aa",
+          "text": "aa 엔딩",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left",
+              "active": true
+            },
+            {
+              "id": "bb",
+              "emotion": "default",
+              "position": "center"
+            }
+          ]
+        }
+      ],
+      "next": "good_ending_bb"
+    },
+    {
+      "id": "good_ending_bb",
+      "type": "ending",
+      "place": "forest",
+      "dialogues": [
+        {
+          "speaker": "bb",
+          "text": "bb 엔딩",
+          "characters": [
+            {
+              "id": "aa",
+              "emotion": "default",
+              "position": "left",
+              "active": true
+            },
+            {
+              "id": "bb",
+              "emotion": "default",
+              "position": "center",
+              "active": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "endingConfig": {
+    "thresholds": {
+      "bad": 0,
+      "normal": 1,
+      "good": 2,
+      "best": 4
+    },
+    "common": {
+      "normal": {
+        "title": "엔딩 제목",
+        "message": "엔딩 설명"
+      }
+    },
+    "duo": [],
+    "characterEndings": {
+      "aa": {
+        "good": {
+          "title": "aa 엔딩",
+          "message": "엔딩 설명"
+        }
+      },
+      "bb": {
+        "good": {
+          "title": "bb 엔딩",
+          "message": "엔딩 설명"
+        }
+      }
+    }
+  }
+}
