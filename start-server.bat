@@ -6,7 +6,8 @@ if not exist "%SCRIPT%" (
   exit /b 1
 )
 set PORT=8000
-start "Static Server" powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT%" -Port %PORT% -SpaFallback
+set ROOT=%~dp0visual-novel-out
+start "Static Server" powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT%" -Port %PORT% -RootPath "%ROOT%" -SpaFallback
 rem Wait briefly for server to start
 timeout /t 2 /nobreak >nul
 start "" http://localhost:%PORT%/
