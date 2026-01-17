@@ -1,18 +1,7 @@
-## Quickstart (Windows, No Install)
+@rrllgg22님의 웹노벨 (웹 기반 비주얼 노벨) 프로그램의 소스코드에 개인적 용도로 기능들을 추가한 프로젝트입니다.
+https://www.postype.com/@011092/post/21053410
 
-- Open the folder and double-click `start-server.bat`.
-- It opens a PowerShell window serving `visual-novel-out` at `http://localhost:8000/`.
-- Stop by closing the PowerShell window or pressing `Ctrl + C` in that window.
+배계를님의 작곡가 미연시 게임을 위해 커스터마이즈하고 있습니다.
+이 baegyeleul_build 리포지토리는 baegyeleul 리포지토리에서 빌드한 프로그램입니다.
 
-### Alternative: Run in terminal
-
-```powershell
-cd C:\Users\USER\Documents\GitHub\baegyeleul_build
-./start-server.bat
-# then open http://localhost:8000/
-```
-
-### Notes
-- Uses a lightweight PowerShell server (`tools/static-server.ps1`), no extra installs.
-- Supports SPA fallback for client-side routes.
-- Change port by editing `start-server.bat` (`set PORT=8000`).
+*외부인은 assets 폴더 안에 있는 리소스를 절대 사용하시면 안됩니다.
